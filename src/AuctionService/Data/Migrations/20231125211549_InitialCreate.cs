@@ -15,16 +15,16 @@ namespace AuctionService.Data.Migrations
                 name: "Auctions",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ReservePrice = table.Column<int>(type: "int", nullable: false),
-                    Seller = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Winner = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SoldAmount = table.Column<int>(type: "int", nullable: true),
-                    CurrentHighBid = table.Column<int>(type: "int", nullable: true),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdateAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AuctionEnd = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Status = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    ReservePrice = table.Column<int>(type: "integer", nullable: false),
+                    Seller = table.Column<string>(type: "text", nullable: true),
+                    Winner = table.Column<string>(type: "text", nullable: true),
+                    SoldAmount = table.Column<int>(type: "integer", nullable: true),
+                    CurrentHighBid = table.Column<int>(type: "integer", nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdateAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    AuctionEnd = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    Status = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -35,14 +35,14 @@ namespace AuctionService.Data.Migrations
                 name: "Items",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Make = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Model = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Year = table.Column<int>(type: "int", nullable: false),
-                    Color = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Mileage = table.Column<int>(type: "int", nullable: false),
-                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AuctionId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Make = table.Column<string>(type: "text", nullable: true),
+                    Model = table.Column<string>(type: "text", nullable: true),
+                    Year = table.Column<int>(type: "integer", nullable: false),
+                    Color = table.Column<string>(type: "text", nullable: true),
+                    Mileage = table.Column<int>(type: "integer", nullable: false),
+                    ImageUrl = table.Column<string>(type: "text", nullable: true),
+                    AuctionId = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {

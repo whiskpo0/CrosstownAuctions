@@ -10,7 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddDbContext<AuctionDbContext>(opt =>
 {
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")); 
+    //opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -18,11 +19,12 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddMassTransit(x =>
 {
     
-    x.AddEntityFrameworkOutbox<AuctionDbContext>(o =>
+    x.AddEntityFrameworkOutbox<AuctionDbContext>(options =>
     {
-        o.QueryDelay = TimeSpan.FromSeconds(10);
-        o.UseSqlServer();
-        o.UseBusOutbox();
+        options.QueryDelay = TimeSpan.FromSeconds(10);
+        options.UsePostgres();
+        //options.UseSqlServer();
+        options.UseBusOutbox();        
     });
 
     x.AddConsumersFromNamespaceContaining<AuctionCreatedFaultConsumer>();
@@ -31,6 +33,12 @@ builder.Services.AddMassTransit(x =>
 
     x.UsingRabbitMq((context, config) =>
     {
+        //config.Host(builder.Configuration["RabbitMq:Host"], "/", host =>
+        //{
+        //    host.Username(builder.Configuration.GetValue("RabbitMq:Username", "guest"));
+        //    host.Password(builder.Configuration.GetValue("RabbitMq:Password", "guest"));
+        //});
+
         config.ConfigureEndpoints(context);
     });
 }); 

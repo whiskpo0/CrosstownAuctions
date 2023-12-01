@@ -1,12 +1,9 @@
-using MongoDB.Driver;
-using MongoDB.Entities;
-using Polly.Extensions.Http;
-using Polly;
-using SearchService.Data;
-using SearchService.Models;
-using SearchService.Services;
 using MassTransit;
+using Polly;
+using Polly.Extensions.Http;
 using SearchService.Consumers;
+using SearchService.Data;
+using SearchService.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +21,12 @@ builder.Services.AddMassTransit(x =>
 
     x.UsingRabbitMq((context, config) =>
     {
+        //config.Host(builder.Configuration["RabbitMq:Host"], "/", host =>
+        //{
+        //    host.Username(builder.Configuration.GetValue("RabbitMq:Username", "guest"));
+        //    host.Password(builder.Configuration.GetValue("RabbitMq:Password", "guest"));
+        //});
+
         config.ReceiveEndpoint("search-auction-created", e =>
         {
             e.UseMessageRetry(r => r.Interval(5, 5));
@@ -34,6 +37,8 @@ builder.Services.AddMassTransit(x =>
         config.ConfigureEndpoints(context);
     });
 });
+
+//builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();
 
