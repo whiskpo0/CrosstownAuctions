@@ -54,13 +54,13 @@ namespace AuctionService.Controllers
             return _mapper.Map<AuctionDto>(auction);
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<AuctionDto>> CreateAuction(CreateAuctionDto auctionDto)
         {
             var auction = _mapper.Map<Auction>(auctionDto);
 
-            auction.Seller = "Test";// User.Identity.Name;
+            auction.Seller = User.Identity.Name;
 
             _context.Auctions.Add(auction);
 
@@ -79,7 +79,7 @@ namespace AuctionService.Controllers
             return CreatedAtAction(nameof(GetAuctionById), new { auction.Id }, newAuction);
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpPut("{Id}")]
         public async Task<ActionResult> UpdateAuction(Guid Id, UpdateAuctionDto updateAuctionDto)
         {
@@ -91,7 +91,7 @@ namespace AuctionService.Controllers
                 return NotFound();
             }
 
-            //if (auction.Seller != User.Identity.Name) return Forbid();
+            if (auction.Seller != User.Identity.Name) return Forbid();
 
             auction.Item.Make = updateAuctionDto.Make ?? auction.Item.Make;
             auction.Item.Model = updateAuctionDto.Model ?? auction.Item.Model;
@@ -111,7 +111,7 @@ namespace AuctionService.Controllers
             return BadRequest("Problem saving changes");
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpDelete("{Id}")]
         public async Task<ActionResult> DeleteAuction(Guid Id)
         {
@@ -122,7 +122,7 @@ namespace AuctionService.Controllers
                 return NotFound();
             }
 
-            //if (auction.Seller != User.Identity.Name) return Forbid();
+            if (auction.Seller != User.Identity.Name) return Forbid();
 
             _context.Auctions.Remove(auction);
 

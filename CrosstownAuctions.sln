@@ -5,9 +5,11 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1073C64C-E9FE-433C-B07C-0A3497E3B780}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuctionService", "src\AuctionService\AuctionService.csproj", "{1C5942E7-8755-429E-8E49-15903AAD599B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuctionService", "src\AuctionService\AuctionService.csproj", "{1C5942E7-8755-429E-8E49-15903AAD599B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchService", "src\SearchService\SearchService.csproj", "{BCD608B3-888B-4B81-921D-1A2A49E9978F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SearchService", "src\SearchService\SearchService.csproj", "{BCD608B3-888B-4B81-921D-1A2A49E9978F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityService", "src\IdentityService\IdentityService.csproj", "{39EEB4E9-130F-4387-8585-252821379BE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{BCD608B3-888B-4B81-921D-1A2A49E9978F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCD608B3-888B-4B81-921D-1A2A49E9978F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCD608B3-888B-4B81-921D-1A2A49E9978F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39EEB4E9-130F-4387-8585-252821379BE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39EEB4E9-130F-4387-8585-252821379BE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39EEB4E9-130F-4387-8585-252821379BE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39EEB4E9-130F-4387-8585-252821379BE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +36,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{1C5942E7-8755-429E-8E49-15903AAD599B} = {1073C64C-E9FE-433C-B07C-0A3497E3B780}
 		{BCD608B3-888B-4B81-921D-1A2A49E9978F} = {1073C64C-E9FE-433C-B07C-0A3497E3B780}
+		{39EEB4E9-130F-4387-8585-252821379BE0} = {1073C64C-E9FE-433C-B07C-0A3497E3B780}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9CE3CE61-BA10-4E37-B5B8-14BA6C1D7264}
