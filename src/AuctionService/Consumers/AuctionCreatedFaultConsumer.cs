@@ -1,4 +1,4 @@
-﻿using AuctionService.Contracts;
+﻿using Contracts;
 using MassTransit;
 
 namespace AuctionService.Consumers

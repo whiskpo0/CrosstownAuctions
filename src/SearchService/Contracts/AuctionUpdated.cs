@@ -1,4 +1,4 @@
-﻿namespace SearchService.Contracts
+﻿namespace Contracts
 {
     public class AuctionUpdated
     {

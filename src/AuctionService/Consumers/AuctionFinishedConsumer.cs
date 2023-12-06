@@ -1,4 +1,4 @@
-﻿using AuctionService.Contracts;
+﻿using Contracts;
 using AuctionService.Data;
 using AuctionService.Entities;
 using MassTransit;
