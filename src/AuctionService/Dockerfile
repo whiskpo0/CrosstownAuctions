@@ -8,7 +8,7 @@ COPY CrosstownAuctions.sln CrosstownAuctions.sln
 COPY src/AuctionService/AuctionService.csproj src/AuctionService/AuctionService.csproj
 COPY src/SearchService/SearchService.csproj src/SearchService/SearchService.csproj
 COPY src/GatewayService/GatewayService.csproj src/GatewayService/GatewayService.csproj
-# COPY src/BiddingService/BiddingService.csproj src/BiddingService/BiddingService.csproj
+COPY src/BiddingService/BiddingService.csproj src/BiddingService/BiddingService.csproj
 # COPY src/NotificationService/NotificationService.csproj src/NotificationService/NotificationService.csproj
 # COPY src/Contracts/Contracts.csproj src/Contracts/Contracts.csproj <--- Might not need this one. 
 COPY src/IdentityService/IdentityService.csproj src/IdentityService/IdentityService.csproj
