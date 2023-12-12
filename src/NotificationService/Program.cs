@@ -9,14 +9,20 @@ var builder = WebApplication.CreateBuilder(args);
         x.AddConsumersFromNamespaceContaining<AuctionCreatedConsumer>();
         x.SetEndpointNameFormatter(new KebabCaseEndpointNameFormatter("nt", false));
 
-        x.UsingRabbitMq((context, cfg) =>
+        x.UsingRabbitMq((context, config) =>
         {
-            cfg.Host(builder.Configuration["RabbitMq:Host"], "/", host =>
+            config.UseMessageRetry(retry => 
+            {
+                retry.Handle<RabbitMqConnectionException>(); 
+                retry.Interval(5, TimeSpan.FromSeconds(10));
+            });
+        
+            config.Host(builder.Configuration["RabbitMq:Host"], "/", host =>
             {
                 host.Username(builder.Configuration.GetValue("RabbitMq:Username", "guest"));
                 host.Password(builder.Configuration.GetValue("RabbitMq:Password", "guest"));
             });
-            cfg.ConfigureEndpoints(context);
+            config.ConfigureEndpoints(context);
         });
     });
 
