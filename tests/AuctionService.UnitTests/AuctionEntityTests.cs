@@ -8,7 +8,7 @@ public class AuctionEntityTests
     public void HasReservePrice_ReservePriveGtZero_True()
     {
         //Arrange 
-        var auction = new Auction{Id = Guid.NewGuid(), ReservePrice = 10}; 
+        var auction = new Auction{ Id = Guid.NewGuid(), ReservePrice = 10}; 
 
         //Act 
         var result = auction.HasReservePrice(); 
@@ -21,7 +21,7 @@ public class AuctionEntityTests
     public void HasReservePrice_ReservePriveGtZero_False()
     {
         //Arrange 
-        var auction = new Auction{Id = Guid.NewGuid(), ReservePrice = 0}; 
+        var auction = new Auction{ Id = Guid.NewGuid(), ReservePrice = 0}; 
 
         //Act 
         var result = auction.HasReservePrice(); 
