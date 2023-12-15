@@ -22,7 +22,7 @@ namespace AuctionService.Data.Migrations
     //                SoldAmount = table.Column<int>(type: "int", nullable: true),
     //                CurrentHighBid = table.Column<int>(type: "int", nullable: true),
     //                CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-    //                UpdateAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+    //                UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
     //                AuctionEnd = table.Column<DateTime>(type: "datetime2", nullable: false),
     //                Status = table.Column<int>(type: "int", nullable: false)
     //            },
