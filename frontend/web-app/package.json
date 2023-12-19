@@ -29,6 +29,7 @@
     "react-icons": "^4.10.1",
     "tailwindcss": "^3.3.0",
     "typescript": "^5",
-    "zustand": "^4.3.8"
+    "zustand": "^4.3.8",
+    "next-auth": "^4.22.1"
   }
 }
