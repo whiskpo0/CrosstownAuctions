@@ -1,8 +1,8 @@
 import { getDetailedViewData } from '@/app/actions/auctionActions'
 import Heading from '@/app/components/Heading';
 import React from 'react'
-import CountdownTimer from '../CountdownTimer';
-import CarImage from '../CarImage';
+import CountdownTimer from '../../CountdownTimer';
+import CarImage from '../../CarImage';
 import DetailedSpecs from './DetailSpecs';
 import { getCurrentUser } from '@/app/actions/authActions';
 import EditButton from './EditButton';
