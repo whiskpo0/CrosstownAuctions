@@ -34,6 +34,8 @@
     "zustand": "^4.3.8",
     "next-auth": "^4.22.1",
     "react-hook-form": "^7.45.1",
-    "react-hot-toast": "^2.4.1"
+    "react-hot-toast": "^2.4.1",
+    "@microsoft/signalr": "^7.0.7",
+    "date-fns": "^2.30.0"
   }
 }
