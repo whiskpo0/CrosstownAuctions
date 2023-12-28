@@ -17,8 +17,8 @@
   "devDependencies": {
     "@microsoft/signalr": "^7.0.7",
     "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@types/node": "^20",
-    "@types/react": "^18",
+    "@types/node": "20.10.5",
+    "@types/react": "18.2.45",
     "@types/react-datepicker": "^4.11.2",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
@@ -36,7 +36,7 @@
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.10.1",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5",
+    "typescript": "5.3.3",
     "zustand": "^4.3.8"
   }
 }
