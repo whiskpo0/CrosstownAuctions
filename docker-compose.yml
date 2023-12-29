@@ -83,7 +83,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Docker
       - ASPNETCORE_URLS=http://+:80
-      - ClientApp=http://app.carsties.com
+      - ClientApp=http://app.crosstownauctions.com
       - ConnectionStrings__DefaultConnection=Server=postgres:5432;User Id=postgres;Password=postgrespw;Database=identity
       - VIRTUAL_HOST=id.crosstownauctions.com      
     depends_on:

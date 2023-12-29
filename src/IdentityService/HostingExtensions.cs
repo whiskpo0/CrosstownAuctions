@@ -39,7 +39,7 @@ namespace IdentityService
                 })
                 .AddInMemoryIdentityResources(Config.IdentityResources)
                 .AddInMemoryApiScopes(Config.ApiScopes)
-           .AddInMemoryClients(Config.Clients(builder.Configuration))
+                .AddInMemoryClients(Config.Clients(builder.Configuration))
                 .AddAspNetIdentity<ApplicationUser>()
                 .AddProfileService<CustomProfileService>();
 

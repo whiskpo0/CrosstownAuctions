@@ -1,7 +1,7 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/auth";
 import { getToken } from "next-auth/jwt";
-import {cookies, headers} from 'next/headers';
+import {cookies, headers} from "next/headers"
 import { NextApiRequest } from "next";
 
 export async function getSession() {
